@@ -4,8 +4,10 @@ const express = require('express');
 // Création de l'application Express
 const app = express();
 
+
 // Inclusion du module 'path' pour gérer les chemins de fichiers
 const path = require('path');
+
 
 
 // Servir des fichiers statiques (CSS, images, JS côté client, etc.)
@@ -21,12 +23,13 @@ app.use(expressLayouts);
 app.set('layout','./layouts/layout'); // layout par défaut
 
 const exampleRouter = require('./routes/exampleRouter');
+const mainRouter = require('./routes/mainRouter');
 
-app.use('/', exampleRouter);
-
+app.use('/', mainRouter);
+app.use('/jokes', exampleRouter);
 
 // Routeur pour la page d'accueil
-app.get("/*path",(req,res)=>{
+app.get('/*path', (req, res) =>{
     res.redirect('/');
 });
 
