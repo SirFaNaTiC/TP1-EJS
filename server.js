@@ -5,6 +5,8 @@ require('dotenv').config({path:'./.env'});
 // (ce sera la valeur système process.env.PORT si elle existe, 3000 sinon)
 const port = process.env.PORT || 3000
 
+require("./controllers/mongoose_init");
+
 // Inclusion du module prédéfini de Node.js permettant d'exécuter un serveur http
 const http = require('http')
 // Inclusion de l'application Express

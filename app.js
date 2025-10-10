@@ -27,6 +27,7 @@ const mainRouter = require('./routes/mainRouter');
 
 app.use('/', mainRouter);
 app.use('/jokes', exampleRouter);
+app.use('/movies', mainRouter);
 
 // Routeur pour la page d'accueil
 app.get('/*path', (req, res) =>{
